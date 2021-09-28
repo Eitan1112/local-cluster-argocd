@@ -1,0 +1,6 @@
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+  source:
+    repoURL: https://github.com/Eitan1112/local-cluster-argocd
+    targetRevision: HEAD
