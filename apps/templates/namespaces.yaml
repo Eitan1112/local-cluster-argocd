@@ -15,7 +15,7 @@ metadata:
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: ecommerce
+  name: sock-shop
   labels:
     istio-injection: enabled
   annotations:

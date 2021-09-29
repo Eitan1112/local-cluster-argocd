@@ -1,6 +1,12 @@
 spec:
-  destination:
-    server: https://kubernetes.default.svc
-  source:
-    repoURL: https://github.com/Eitan1112/local-cluster-argocd
-    targetRevision: HEAD
+  default:
+    destination:
+      server: https://kubernetes.default.svc
+    source:
+      repoURL: https://github.com/Eitan1112/local-cluster-argocd
+      targetRevision: HEAD
+
+  sockShop:
+    source:
+      repoURL: https://github.com/GoogleCloudPlatform/microservices-demo
+      targetRevision: HEAD
