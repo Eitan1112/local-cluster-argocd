@@ -4,6 +4,8 @@ metadata:
   name: applications
   namespace: argocd
 spec:
+  syncPolicy:
+    automated: {}
   project: default
   source:
     repoURL: https://github.com/Eitan1112/local-cluster-argocd

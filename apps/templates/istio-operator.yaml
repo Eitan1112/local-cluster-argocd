@@ -7,6 +7,9 @@ metadata:
   - resources-finalizer.argocd.argoproj.io
   annotations:
     argocd.argoproj.io/sync-wave: "1" # Before the istio-system is created
+  syncPolicy:
+    automated:
+      prune: true
 spec:
   destination:
     namespace: istio-operator
