@@ -11,7 +11,7 @@ spec:
       prune: true
   destination:
     namespace: sock-shop
-    server: {{ .Values.spec.sockShop.destination.server }}
+    server: {{ .Values.spec.default.destination.server }}
   project: default
   source:
     path: sock-shop
