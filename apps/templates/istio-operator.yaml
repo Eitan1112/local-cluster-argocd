@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: istio
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+  argocd.argoproj.io/sync-wave: "1" # Before the istio-system is created
+spec:
+  destination:
+    namespace: istio-operator
+    server: {{ .Values.spec.destination.server }}
+  project: default
+  source:
+    path: istio-operator
+    repoURL: {{ .Values.spec.source.repoURL }}
+    targetRevision: {{ .Values.spec.source.targetRevision }}
