@@ -5,7 +5,8 @@ metadata:
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
-      argocd.argoproj.io/sync-wave: "2" # Create the istio-system namespace after the operator CRD is created
+  annotations:
+    argocd.argoproj.io/sync-wave: "2" # Create the istio-system namespace after the operator CRD is created
 spec:
   destination:
     namespace: istio-system
