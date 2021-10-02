@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: prometheus
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+  annotations:
+    argocd.argoproj.io/sync-wave: "1" # Before the istio-system is created
+spec:
+  syncPolicy:
+    automated:
+      prune: true
+  destination:
+    namespace: prometheus
+    server: {{ .Values.spec.default.destination.server }}
+  project: default
+  source:
+    path: prometheus
+    repoURL: {{ .Values.spec.default.source.repoURL }}
+    targetRevision: {{ .Values.spec.default.source.targetRevision }}
